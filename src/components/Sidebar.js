@@ -1,15 +1,19 @@
 import { Home, Briefcase, BookOpen, Star, Folder, Award, Mail, User } from "lucide-react";
+import logo from './profile.jpeg';
+
 
 const Sidebar = () => {
   return (
-    <div className="w-64 h-screen bg-gray-900 text-white flex flex-col p-4 space-y-4">
+    <div className="w-80 h-screen bg-gray-900 text-white flex flex-col p-4 space-y-4">
       {/* Profile Image */}
-      <div className="flex justify-center">
+      <div className="flex flex-col items-center">
         <img
-          src=""
+          src={logo}
           alt="Profile"
-          className="w-24 h-24 rounded-full border-2 border-gray-300"
+          className="w-32 h-32 rounded-full border-2 border-gray-600"
         />
+        <h2 className="mt-2 text-xl font-semibold">Sihle Ntshalintshali</h2>
+        <p className="text-gray-400">Fullstack Developer</p>
       </div>
 
       {/* Navigation Links */}
