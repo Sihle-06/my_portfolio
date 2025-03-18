@@ -1,6 +1,6 @@
 import { Home, Briefcase, BookOpen, Star, Folder, Award, Mail, Github, Linkedin } from "lucide-react";
 import { Link, Outlet } from "react-router-dom";
-import logo from '../assets/image.png'
+import logo from '../assets/index.jpg'
 
 const Sidebar = () => {
   return (
@@ -8,7 +8,7 @@ const Sidebar = () => {
       <img
         src={logo}
         alt="Profile"
-        className="rounded-full w-32 h-32 border-4 border-gray-700 mt-6"
+        className="object-cover rounded-full w-32 h-32 border-4 border-gray-700 mt-6"
       />
       <h2 className="mt-4 text-xl font-semibold">Sihle Ntshalintshali</h2>
       <p className="text-sm text-gray-400">Junior Fullstack Developer</p>

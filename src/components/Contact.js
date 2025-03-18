@@ -56,15 +56,15 @@ export default function ContactPage() {
           <h2 className="text-xl font-semibold mb-4">Contact Information</h2>
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <FaMapMarkerAlt className="text-blue-500" />
+              <FaMapMarkerAlt className="text-orange-400" />
               <span className="font-semibold">Soweto</span>
             </div>
             <div className="flex items-center space-x-3">
-              <FaPhoneAlt className="text-blue-500" />
+              <FaPhoneAlt className="text-orange-400" />
               <span className="font-semibold">074-349-1087</span>
             </div>
             <div className="flex items-center space-x-3">
-              <FaEnvelope className="text-blue-500" />
+              <FaEnvelope className="text-orange-400" />
               <span className="font-semibold">sihlentshalintshali06@gmail.com</span>
             </div>
           </div>

@@ -14,7 +14,7 @@ const Certifications = () => {
       <div className="max-w-3xl w-full flex flex-col gap-6">
         {certifications.map((cert, index) => (
           <div key={index} className="p-4 bg-gray-800 rounded-lg shadow-md w-full">
-            <h2 className="text-xl font-semibold">{cert.title}</h2>
+            <h2 className="text-xl text-orange-400 font-semibold">{cert.title}</h2>
             <p className="text-gray-400">Year: {cert.year} {cert.score && `| Score: ${cert.score}`}</p>
           </div>
         ))}

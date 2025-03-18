@@ -12,9 +12,9 @@ const Layout = () => {
   return (
     <div className="flex h-screen bg-gray-900 text-white">
       <Sidebar />
-      <div className="">
+      <div className="flex-1 flex">
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main  />} className="items-center justify-center p-5"/>
           <Route path="/work-history" element={<WorkHistory />} />
           <Route path="/education" element= {<Education/>} />
           <Route path="/skills" element = {<Skills/>} />

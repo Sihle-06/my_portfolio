@@ -33,11 +33,11 @@ const KeySkills = () => {
       <h1 className="text-3xl font-bold mb-6 border-b pb-2 w-full ">Key Skills</h1>
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillsData.map((skillGroup, index) => (
-          <div key={index} className="p-4 bg-gray-700 rounded-lg shadow-md mt-6">
-            <h2 className="text-2xl font-semibold">{skillGroup.category}</h2>
+          <div key={index} className="p-4 bg-gray-600 rounded-lg shadow-md mt-6">
+            <h2 className="text-2xl text-orange-400  font-semibold">{skillGroup.category}</h2>
             <div className="flex flex-wrap mt-2 gap-2">
               {skillGroup.skills.map((skill, i) => (
-                <span key={i} className="bg-gray-800 px-3 text-orange-400  py-1 rounded-full text-sm">{skill}</span>
+                <span key={i} className="bg-gray-800 px-3  py-1 rounded-full text-sm">{skill}</span>
               ))}
             </div>
           </div>
