@@ -3,16 +3,16 @@ import React from "react";
 const WorkHistory = () => {
   const experiences = [
     {
-        title: "Junior Full-Stack Developer (Internship)",
-        company: "Shaper | Johannesburg",
-        duration: "During IT: Systems Support NQF 5 Learnership",
-        responsibilities: [
-          "Developed backend services with Spring Boot and PostgreSQL, ensuring seamless API communication with frontend applications.",
-          "Implemented RESTful APIs to support the EasyErrands mobile application, improving data management and user experience.",
-          "Utilized Git for collaborative development and version control.",
-          "Worked closely with UI/UX designers to ensure an optimal user experience."
-        ]
-      },
+      title: "Junior Full-Stack Developer",
+      company: "Shaper | Auckland Park",
+      duration: "Oct 2024 - Current",
+      responsibilities: [
+        "Developed backend services with Spring Boot and PostgreSQL, ensuring seamless API communication with frontend applications.",
+        "Implemented RESTful APIs to support the EasyErrands mobile application, improving data management and user experience.",
+        "Utilized Git for collaborative development and version control.",
+        "Worked closely with UI/UX designers to ensure an optimal user experience."
+      ]
+    },
     {
       title: "Software Engineer (Junior Guidewire Developer)",
       company: "Zensar Technologies | Sandton",
@@ -36,23 +36,32 @@ const WorkHistory = () => {
         "Supported automation projects by analyzing workflows and assisting in process improvements."
       ]
     }
-   
   ];
 
   return (
-    <div className="p-6 bg-gray-900 text-white min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 border-b pb-2">Work History</h1>
-      {experiences.map((exp, index) => (
-        <div key={index} className="mb-6 p-4 bg-gray-800 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold">{exp.title}</h2>
-          <p className="text-orange-400 ">{exp.company} | {exp.duration}</p>
-          <ul className="mt-2 list-disc list-inside text-gray-300">
-            {exp.responsibilities.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+    <div className="min-h-screen p-8 text-white bg-gray-900">
+      <h1 className="pb-4 mb-10 text-4xl font-extrabold text-center text-orange-400">
+        Work Experience
+      </h1>
+      <div className="grid gap-8 md:grid-cols-2">
+        {experiences.map((exp, index) => (
+          <div
+            key={index}
+            className="relative p-6 transition-all duration-300 transform bg-gray-800 border border-gray-700 shadow-lg rounded-2xl bg-opacity-90 backdrop-blur-md hover:scale-105 hover:border-orange-400 hover:shadow-orange-500/50"
+          >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-t-2xl"></div>
+            <h2 className="text-2xl font-bold text-white">{exp.title}</h2>
+            <p className="mt-1 text-lg font-medium text-orange-400">
+              {exp.company} | {exp.duration}
+            </p>
+            <ul className="mt-4 space-y-2 text-gray-300 list-disc list-inside">
+              {exp.responsibilities.map((item, i) => (
+                <li key={i} className="leading-relaxed">{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

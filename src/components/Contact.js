@@ -44,16 +44,16 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="p-6 bg-gray-900 text-white min-h-screen flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-6 border-b pb-2 w-full ">Contact</h1>
-      <h3 className="text-gray-500 text-sm">Get in touch</h3>
-      <h1 className="text-4xl font-bold text-gray-900 mt-1">Contact Me</h1>
-      <p className="text-gray-500 mt-2 mb-8">Feel free to reach out for collaborations</p>
+    <div className="flex flex-col items-center min-h-screen p-6 text-white bg-gray-900">
+      <h1 className="w-full pb-2 mb-6 text-3xl font-bold border-b ">Contact</h1>
+      <h3 className="text-sm text-gray-500">Get in touch</h3>
+      <h1 className="mt-1 text-4xl font-bold text-gray-900">Contact Me</h1>
+      <p className="mt-2 mb-8 text-gray-500">Feel free to reach out for collaborations</p>
 
-      <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
+      <div className="grid w-full max-w-4xl gap-8 md:grid-cols-2">
         {/* Contact Information */}
-        <div className="bg-gray-800 p-6 rounded-2xl shadow-lg">
-          <h2 className="text-xl font-semibold mb-4">Contact Information</h2>
+        <div className="p-6 bg-gray-800 shadow-lg rounded-2xl">
+          <h2 className="mb-4 text-xl font-semibold">Contact Information</h2>
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <FaMapMarkerAlt className="text-orange-400" />
@@ -68,14 +68,14 @@ export default function ContactPage() {
               <span className="font-semibold">sihlentshalintshali06@gmail.com</span>
             </div>
           </div>
-          <div className="mt-12 bg-gradient-to-r from-orange-400 to-orange-700  text-white p-4 w-full h-50 rounded-xl">
-            <h3 className="font-semibold mt-4">Let's connect</h3>
-            <p className="text-sm mt-6">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+          <div className="w-full p-4 mt-12 text-white bg-gradient-to-r from-orange-400 to-orange-700 h-50 rounded-xl">
+            <h3 className="mt-4 font-semibold">Let's connect</h3>
+            <p className="mt-6 text-sm">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
           </div>
         </div>
 
         {/* Contact Form */}
-        <div className="bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="p-6 bg-gray-800 shadow-lg rounded-2xl">
           <form ref={form} onSubmit={sendEmail} className="space-y-4">
             <div>
               <label className="block text-gray-200">Full Name</label>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                 name="name"
                 value={formState.name}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-lg mt-1 text-gray-600"
+                className="w-full p-3 mt-1 text-gray-600 border rounded-lg"
                 placeholder="Your name"
                 required
               />
@@ -96,7 +96,7 @@ export default function ContactPage() {
                 name="email"
                 value={formState.email}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-lg mt-1 text-gray-600"
+                className="w-full p-3 mt-1 text-gray-600 border rounded-lg"
                 placeholder="your.email@example.com"
                 required
               />
@@ -107,7 +107,7 @@ export default function ContactPage() {
                 name="message"
                 value={formState.message}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-lg mt-1 h-32 text-gray-600"
+                className="w-full h-32 p-3 mt-1 text-gray-600 border rounded-lg"
                 placeholder="Your message here..."
                 required
               ></textarea>
@@ -115,7 +115,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center bg-gradient-to-r from-orange-400 to-orange-500 text-white py-3 rounded-lg text-lg font-semibold"
+              className="flex items-center justify-center w-full py-3 text-lg font-semibold text-white rounded-lg bg-gradient-to-r from-orange-400 to-orange-500"
             >
               {isSubmitting ? "Sending..." : <><FaPaperPlane className="mr-2" /> Send Message</>}
             </button>

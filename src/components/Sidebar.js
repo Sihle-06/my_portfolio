@@ -1,51 +1,39 @@
 import { Home, Briefcase, BookOpen, Star, Folder, Award, Mail, Github, Linkedin } from "lucide-react";
-import { Link, Outlet } from "react-router-dom";
-import logo from '../assets/index.jpg'
+import { Link, Outlet, useLocation } from "react-router-dom";
+import logo from "../assets/index.jpg";
 
 const Sidebar = () => {
+  const location = useLocation();
+
   return (
-    <aside className="w-80 bg-gray-800 p-6 flex flex-col items-center h-screen">
+    <aside className="flex flex-col items-center h-screen p-6 bg-gray-800 w-80">
       <img
         src={logo}
         alt="Profile"
-        className="object-cover rounded-full w-32 h-32 border-4 border-gray-700 mt-6"
+        className="object-cover w-32 h-32 mt-6 border-4 border-gray-700 rounded-full"
       />
-      <h2 className="mt-4 text-xl font-semibold">Sihle Ntshalintshali</h2>
+      <h1 className="mt-4 text-xl font-bold">Sihle Ntshalintshali</h1>
       <p className="text-sm text-gray-400">Junior Fullstack Developer</p>
-      
-      <nav className="my-6 mt-16 w-full">
+
+      <nav className="w-full my-6 mt-16">
         <ul className="space-y-3">
-          <Link to="/" className="block">
-            <NavItem icon={<Home size={20} />} label="Home" />
-          </Link>
-          <Link to="/work-history" className="block">
-            <NavItem icon={<Briefcase size={20} />} label="Work History" />
-          </Link>
-          <Link to="/education" className="block">
-            <NavItem icon={<BookOpen size={20} />} label="Education" />
-          </Link>
-          <Link to="/skills" className="block">
-            <NavItem icon={<Star size={20} />} label="Skills" />
-          </Link>
-          <Link to="/projects" className="block">
-            <NavItem icon={<Folder size={20} />} label="Projects" />
-          </Link>
-          <Link to="/certifications" className="block">
-            <NavItem icon={<Award size={20} />} label="Certifications and Training" />
-          </Link>
-          <Link to="/contact" className="block">
-            <NavItem icon={<Mail size={20} />} label="Contact" />
-          </Link>
+          <NavItem to="/home" icon={<Home size={20} />} label="Home" currentPath={location.pathname} />
+          <NavItem to="/work-history" icon={<Briefcase size={20} />} label="Work History" currentPath={location.pathname} />
+          <NavItem to="/education" icon={<BookOpen size={20} />} label="Education" currentPath={location.pathname} />
+          <NavItem to="/skills" icon={<Star size={20} />} label="Skills" currentPath={location.pathname} />
+          <NavItem to="/projects" icon={<Folder size={20} />} label="Projects" currentPath={location.pathname} />
+          <NavItem to="/certifications" icon={<Award size={20} />} label="Certifications and Training" currentPath={location.pathname} />
+          <NavItem to="/contact" icon={<Mail size={20} />} label="Contact" currentPath={location.pathname} />
         </ul>
       </nav>
-      
+
       {/* Social Links */}
-      <div className="mt-auto flex space-x-4 pb-6">
+      <div className="flex pb-6 mt-auto space-x-4">
         <a href="https://github.com/Sihle-06" target="_blank" rel="noopener noreferrer">
-          <Github className="w-6 h-6 text-gray-400 hover:text-white" />
+          <Github className="w-6 h-6 text-orange-400 hover:text-white" />
         </a>
         <a href="https://www.linkedin.com/in/sihle-ntshalintshali-811688194/" target="_blank" rel="noopener noreferrer">
-          <Linkedin className="w-6 h-6 text-gray-400 hover:text-white" />
+          <Linkedin className="w-6 h-6 text-orange-400 hover:text-white" />
         </a>
       </div>
       <Outlet />
@@ -53,12 +41,18 @@ const Sidebar = () => {
   );
 };
 
-const NavItem = ({ icon, label }) => {
+const NavItem = ({ to, icon, label, currentPath }) => {
+  const isActive = currentPath === to;
+
   return (
-    <div className="flex items-center space-x-3 p-2 rounded bg-gray-700 hover:bg-gray-600 cursor-pointer">
-      {icon}
-      <span>{label}</span>
-    </div>
+    <Link to={to} className="block">
+      <div className={`flex items-center p-2 space-x-3 rounded cursor-pointer 
+        ${isActive ? "bg-orange-500 text-gray-700" : "bg-gray-700 text-gray-300"} 
+        hover:bg-orange-400 hover:text-white transition`}>
+        {icon}
+        <span>{label}</span>
+      </div>
+    </Link>
   );
 };
 
