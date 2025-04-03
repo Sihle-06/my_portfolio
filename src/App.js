@@ -33,6 +33,7 @@ const Layout = () => {
             className="w-full"
           >
             <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Main />} />
               <Route path="/home" element={<Main />} />
               <Route path="/work-history" element={<WorkHistory />} />
               <Route path="/education" element={<Education />} />

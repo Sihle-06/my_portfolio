@@ -29,21 +29,22 @@ const Education = () => {
       </h1>
       <div className="grid gap-8 md:grid-cols-2">
         {educationData.map((edu, index) => (
-          <div
-            key={index}
-            className="relative p-6 transition-all duration-300 transform bg-gray-800 border border-gray-700 shadow-lg rounded-2xl bg-opacity-90 backdrop-blur-md hover:scale-105 hover:border-orange-400 hover:shadow-orange-500/50"
-          >
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-t-2xl"></div>
-            <h2 className="text-2xl font-bold text-white">{edu.degree}</h2>
-            <p className="mt-1 text-lg font-medium text-orange-400">
-              {edu.institution} | {edu.duration}
-            </p>
-            <ul className="mt-4 space-y-2 text-gray-300 list-disc list-inside">
-              {edu.details.map((item, i) => (
-                <li key={i} className="leading-relaxed">{item}</li>
-              ))}
-            </ul>
-          </div>
+        <div
+        key={index}
+        className="relative p-4 md:p-6 transition-all duration-300 transform bg-gray-800 border border-gray-700 shadow-lg rounded-xl md:rounded-2xl bg-opacity-90 backdrop-blur-md hover:scale-105 hover:border-orange-400 hover:shadow-orange-500/50 w-full md:w-auto"
+      >
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-t-xl md:rounded-t-2xl"></div>
+        <h2 className="text-lg md:text-2xl font-bold text-white">{edu.degree}</h2>
+        <p className="mt-1 text-sm md:text-lg font-medium text-orange-400">
+          {edu.institution} | {edu.duration}
+        </p>
+        <ul className="mt-4 space-y-2 text-sm md:text-base text-gray-300 list-disc list-inside">
+          {edu.details.map((item, i) => (
+            <li key={i} className="leading-relaxed">{item}</li>
+          ))}
+        </ul>
+      </div>
+      
         ))}
       </div>
     </div>
